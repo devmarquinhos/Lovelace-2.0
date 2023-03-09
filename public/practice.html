@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="./static/css/style.css">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linkando as Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Lovelace - Hora de praticar!</title>
+</head>
+<body>
+    <header>
+        <h1><span id="love">Lovelace</span></h1>
+    </header>
+ 
+    <div class="container">
+        <h3 id="timer">00:00:00</h3>
+    </div>
+
+    <section id="textContainer">
+        <div id="containerContent">
+            
+        </div>
+
+        <input id="submitAnswer" type="text" placeholder="A ideia central do texto é..." required>
+        
+        <div class="answerButtons">
+            <button class="sendAnswer" onclick="sendAnswers()">Enviar resposta</button>
+            <button class="changeText" onclick="changeText(practiceText)">Mudar texto</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por <span>Daniel de Santana</span>,<span> Marcos Emanuel </span> e <span> Melkysedeke Costa</span>.</p>
+        <span class="divider"></span>
+        <p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
+    </footer>
+
+    <section id="resultContainer">
+        <div class="modal">
+            <h1>Resultado</h1>
+
+            <div id="scoreContainer">
+                <h2 id="scoreTitle"><span id="score">74</span>/100</h2>
+            </div>
+
+            <p class="modalParagraph">Seu nível é:</p>
+            <span id="level">Advanced</span>
+            <p class="modalParagraph">Deseja salvar o resultado em um PDF?</p>
+            <div id="resultButtons">
+                <button id="savePdf">Quero!</button>
+                <button id="dontSavePdf" onclick="">Não quero</button>
+            </div>
+
+        </div>
+    </section>
+    <script src="./static/js/timer.js"></script>
+    <script src="./static/js/script.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script>
+        Swal.fire({
+            title: 'Iniciar Atividade?',
+            text: "A partir daqui não tera mais volta!",
+            icon: 'warning',
+            iconColor: '#F21B3F',
+            background: 'black',
+            showCancelButton: true,
+            confirmButtonColor: '#F21B3F',
+            border: 'none',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Iniciar'
+          }).then((result) => {
+            if (result.dismiss) {
+                window. history. back()
+            }else{
+                history.pushState(null, null, document.URL);
+                window.addEventListener('popstate', function () {
+                    history.pushState(null, null, document.URL);
+                });
+            }
+          })
+    </script>
+</body>
+</html>
