@@ -35,18 +35,35 @@ app.get('/register', (req, res) => {
 
 // Rota para criar usuário
 app.post('/register', (req, res) => {
-    const { nome, email, senha } = req.body;
-    const sql = 'INSERT INTO users (nome, email, senha) VALUES ($1, $2, $3)';
-    const values = [nome, email, senha];
-    pool.query(sql, values, (err, result) => {
-      if (err) {
+    const { nome, email, senha } = req.body; 
+
+    // Query para verificar se o email existe
+    const selectQuery = 'SELECT * FROM users WHERE email = $1';
+    const selectValues = [email];
+
+    pool.query(selectQuery, selectValues, (selectError, selectResult) => {
+      if (selectError){
         console.error(err);
-        res.status(500).send('Erro ao criar usuário');
+        res.status(500).send("Erro ao verificar o email")
+      } else if (selectResult.rows.length > 0) {
+        // Verifica se há um registro no banco e informa que já existe caso verdadeiro
+        res.status(400).send("Este usuário já está cadastrado")
       } else {
-        res.status(201).send('Usuário criado com sucesso');
+        const insertQuery = 'INSERT INTO users (nome, email, senha) VALUES ($1, $2, $3)';
+        const insertValues = [nome, email, senha];
+
+        pool.query(insertQuery, insertValues, (insertError, insertResult) => {
+          if (insertError){
+            console.error(insertError)
+            res.status(500).send("Erro ao criar o usuário")
+          } else {
+            console.log(insertResult)
+            res.status(201).send("Usuário criado com sucesso!")
+          }
+        })
       }
-    });
-});
+    })
+})
 
 app.listen(port, (error) => {
     if (error) {
