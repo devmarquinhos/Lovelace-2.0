@@ -26,6 +26,8 @@ Este foi orientado pela **Prof. Dr. Lenade Barreto**, desenvolvido e idealizado 
 
 - HTML CSS
 - JavaScript
+- NodeJS
+- PostgreSQL
 - Git e Github
 - Figma
 
