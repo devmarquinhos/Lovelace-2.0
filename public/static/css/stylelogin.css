@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-
 body {
-    margin: 0;
+
     font-family: 'Noto Sans', sans-serif;
     background: linear-gradient(142.15deg, #FFFFFF 49.5%, #F21B3F 159.81%);
 }
 
-body * {
+* {
     box-sizing: border-box;
-    
+    margin: 0;
 }
 
 .main-login{
@@ -108,7 +106,6 @@ body * {
     border: none;
     border-radius: 8px;
     outline: none;
-    text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
     color: #F4F4F4;
@@ -124,7 +121,6 @@ body * {
     border: none;
     border-radius: 8px;
     outline: none;
-    text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
     color: #2b134b;

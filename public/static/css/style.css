@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Noto Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -66,9 +66,13 @@ header {
 
 #mainContent h1 {
     font-size: 40px;
-    margin: 48px 16px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    margin-left: 24px;
+    margin-right: 16px;
     color: #141115;
     user-select: none;
+    
 }
 
 #mainContent p {
@@ -209,14 +213,17 @@ header {
 
 #textContainer p {
     display: flex;
+    font-family: 'Roboto Mono', monospace;
     color: #141115;
     border: 1px solid #F21B3F;
     border-radius: 6px;
     padding: 16px;
     width: 80%;
     min-width: 300px;
+    height: 320px;
     margin: 32px;
     user-select: none;
+    overflow: auto;
 }
 
 #submitAnswer {
@@ -252,13 +259,23 @@ header {
     transition: all .2s;
 }
 
+.sendAnswer:hover{
+    border: 1px solid #F21B3F;
+    background-color: white;
+    color: #F21B3F;
+    box-shadow:  rgba(242, 27, 63, 0.15);
+
+}
+
 .changeText:hover {
+    border: 1px solid #F21B3F;
+    color: black;
     box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
 }
 
 .answerButtons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 16px 0;
     gap: 16px;
 }
@@ -292,6 +309,7 @@ footer p span {
 footer p {
     color: #141115;
 }
+
 footer .divider {
     color: #141115;
     display: none;
@@ -321,7 +339,7 @@ footer .divider {
     border: 1px solid #F21B3F;
     border-radius: 6px;
     box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
-
+    font-family: 'Roboto Mono', monospace;
 }
 
 .timerButton {
@@ -493,7 +511,6 @@ footer .divider {
         box-sizing: border-box;
         margin-left: auto;
         margin-right: auto;
-        
     }
 
     #exampleSection2 img {
@@ -535,5 +552,12 @@ footer .divider {
         display: flex;
         flex-direction: column;
     }
+
+    .answerButtons{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
 }
 
