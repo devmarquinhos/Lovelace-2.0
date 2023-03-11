@@ -49,9 +49,10 @@ app.post('/register', (req, res) => {
         // Verifica se há um registro no banco e informa que já existe caso verdadeiro
         res.status(400).send("Este usuário já está cadastrado")
       } else {
+        // Cria um usuário no banco de dados
         const insertQuery = 'INSERT INTO users (nome, email, senha) VALUES ($1, $2, $3)';
         const insertValues = [nome, email, senha];
-
+        
         pool.query(insertQuery, insertValues, (insertError, insertResult) => {
           if (insertError){
             console.error(insertError)
