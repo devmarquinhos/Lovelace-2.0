@@ -1,4 +1,3 @@
-"use strict"
 let container = document.getElementById("containerContent")
 let pre
 let pos = 0
@@ -104,7 +103,6 @@ function changeText(practiceText){
 // Fechar modal e parar o tempo
 function sendAnswers() {
     stop()
-
 
     let resContainer = document.getElementById("resultContainer")
     let answerContainer = document.getElementById("submitAnswer").value
