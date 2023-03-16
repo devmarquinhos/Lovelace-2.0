@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 96px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
