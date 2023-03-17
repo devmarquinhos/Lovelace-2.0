@@ -90,7 +90,6 @@ app.post('/login', async (req, res) => {
     const result = await client.query(query);
     if (result.rowCount === 1) {
       res.redirect('/practice')
-      // res.status(200).send('Login realizado com sucesso!');
     } else {
       res.status(401).send('Email ou senha incorretos.');
     }
