@@ -29,6 +29,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
 })
 
+app.get('/practice', (req, res) => {
+  res.sendFile(__dirname + '/public/practice.html')
+})
+
 app.get('/register', (req, res) => {
     res.sendFile(__dirname + '/public/register.html');
 });
@@ -85,7 +89,8 @@ app.post('/login', async (req, res) => {
 
     const result = await client.query(query);
     if (result.rowCount === 1) {
-      res.status(200).send('Login realizado com sucesso!');
+      res.redirect('/practice')
+      // res.status(200).send('Login realizado com sucesso!');
     } else {
       res.status(401).send('Email ou senha incorretos.');
     }
