@@ -21,14 +21,14 @@
         <div class="right-login">
             <div class="card-login">
                 <h1>Faça Login</h1>
-                <form>
+                <form method="post" action="/login">
                 <div class="textfield">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" placeholder="Usuario" id="login">
+                    <label for="usuario">Email</label>
+                    <input type="email" placeholder="email" name="email" id="login">
                 </div>
                 <div class="textfield">
                     <label for="senha">Senha</label>
-                    <input type="password" placeholder="Senha" id="senha">
+                    <input type="password" placeholder="Senha" name="senha" id="senha">
                 </div>
                     <div class="btn">
                             <input type="submit" value="Login" onclick="logar(); return false">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function logar(){
             var login = document.getElementById('login').value;
@@ -72,6 +72,6 @@
                     })
                 }
             }
-    </script>
+    </script> -->
 </body>
 </html>

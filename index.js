@@ -66,6 +66,37 @@ app.post('/register', (req, res) => {
     })
 })
 
+
+// Direcionando para página de login
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/public/login.html')
+})
+
+// Rota para fazer login
+app.post('/login', async (req, res) => {
+  const { email, senha } = req.body;
+  const client = await pool.connect();
+
+  try {
+    const query = {
+      text: 'SELECT * FROM users WHERE email = $1 AND senha = $2',
+      values: [email, senha],
+    };
+
+    const result = await client.query(query);
+    if (result.rowCount === 1) {
+      res.status(200).send('Login realizado com sucesso!');
+    } else {
+      res.status(401).send('Email ou senha incorretos.');
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro interno do servidor.');
+  } finally {
+    client.release();
+  }
+});
+
 app.listen(port, (error) => {
     if (error) {
         console.log("Deu erro")
