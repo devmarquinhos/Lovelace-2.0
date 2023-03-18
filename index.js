@@ -63,7 +63,7 @@ app.post('/register', (req, res) => {
             res.status(500).send("Erro ao criar o usuário")
           } else {
             console.log(insertResult)
-            res.status(201).send("Usuário criado com sucesso!")
+            res.redirect('/login')
           }
         })
       }
@@ -89,7 +89,7 @@ app.post('/login', async (req, res) => {
 
     const result = await client.query(query);
     if (result.rowCount === 1) {
-      res.redirect('/practice')
+      res.redirect('/')
     } else {
       res.status(401).send('Email ou senha incorretos.');
     }
@@ -101,6 +101,8 @@ app.post('/login', async (req, res) => {
   }
 });
 
+
+// Inicia o servidor
 app.listen(port, (error) => {
     if (error) {
         console.log("Deu erro")
