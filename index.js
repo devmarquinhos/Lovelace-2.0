@@ -18,11 +18,7 @@ app.use(express.static('public'))
 
 // Configurando o banco de dados
 const pool = new pg.Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "users",
-    password: "admin",
-    port: "5432"
+    connectionString: 'postgres://admin:DAoIDxIXYz3D0hq9FlvlQkSLxI86kzi0@dpg-cgbp6jpmbg55nqnk6700-a.oregon-postgres.render.com/lovelace'
 })
 
 app.get('/', (req, res) => {
