@@ -70,7 +70,6 @@ app.post('/register', (req, res) => {
     })
 })
 
-
 // Direcionando para página de login
 app.get('/login', (req, res) => {
   res.sendFile(__dirname + '/public/login.html')

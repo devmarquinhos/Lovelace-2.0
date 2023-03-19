@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <!-- Linkando o CSS -->
-    <link rel="stylesheet" href="static/css/stylelogin.css">
+    <link rel="stylesheet" href="./static/css/stylelogin.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +16,31 @@
 <body>
     <div class="main-login">
         <div class="left-login">
-            <img src="static/img/ada.svg" class="left-login-image" alt="Leitoraanimação"> 
+            <img src="./static/img/ada.svg" class="left-login-image" alt="Leitoraanimação"> 
         </div>
         <div class="right-login">
             <div class="card-login">
                 <h1>Faça Login</h1>
                 <form method="post" action="/login">
                 <div class="textfield">
-                    <label for="usuario">Email</label>
-                    <input type="email" placeholder="email" name="email" id="login" required>
-                </div>
-                <div class="textfield">
-                    <label for="senha">Senha</label>
-                    <input type="password" placeholder="Senha" name="senha" id="senha" required>
+                    <label for="usuario"></label>
+                    <input name="email" type="email" placeholder="Usuario" id="login" required>
+
+                    <label for="senha"></label>
+                    <input name="senha" type="password" placeholder="Senha" id="senha" required>
                 </div>
                     <div class="btn">
-                            <input type="submit" value="Login">
+                        <button type="submit">Login</button>
                     </div>
                 </form>
+                <div class="btn">
+
+                    <button id="btnCads" onclick="window.location.href='/register'">Cadastro</button>
+                </div>
             </div>
         </div>
     </div>
+    <script src="./static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

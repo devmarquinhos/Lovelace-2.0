@@ -1,24 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <!-- Linkando o CSS -->
-    <link rel="stylesheet" href="static/css/register.css">
+    <link rel="stylesheet" href="./static/css/stylelogin.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Linkando as fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>Lovelace</title>
 </head>
 <body>
-    <div class="formContainer">
-        <form action="/register" method="post">
-            <label for="nome" >Nome</label>
-            <input type="text" name="nome" placeholder= "Seu nome!" required>
-            <label for="email">Email</label>
-            <input type="email" name="email" placeholder= "Seu melhor e-mail!" required>
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" placeholder= "Uma senha segura!" required>
-            <button type="submit">Cadastrar</button>
-        </form>
+    <div class="main-login">
+        <div class="left-login">
+            <img src="./static/img/ada.svg" class="left-login-image" alt="Leitoraanimação"> 
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Cadastro</h1>
+                <form method="post" action="/register">
+                <div class="textfield">
+                    <label for="usuario"></label>
+                    <input name="nome" type="text" placeholder="Usuario" id="login" required>
+
+                    <label for="email"></label>
+                    <input name="email" type="email" placeholder="E-mail" id="email" required>
+
+                    <label for="senha"></label>
+                    <input name="senha" type="password" placeholder="Senha" id="senha" required>
+                </div>
+                    <div class="btn">
+                            <button type="submit" value="Cadastrar">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+    <script src="./static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

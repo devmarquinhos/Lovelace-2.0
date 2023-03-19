@@ -96,17 +96,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row-reverse;
     gap: 5px;
     margin-top: 4px;
 }
-.btn > input{
+.btn > button{
     margin-top: 12px;
-    width: 11.25em;
+    width: 100%;
     padding: 1em;
     border: none;
     border-radius: 8px;
     outline: none;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 3px;
     color: #F4F4F4;
     background: #F21B3F;
@@ -115,18 +116,11 @@ body {
  
 }
 
-.btn-cads{
-    width: 11.25em;
-    padding: 1em;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #2b134b;
-    background: #00ff88;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8852;
+#btnCads{
+    border: 1px solid #F21B3F;
+    background-color: white;
+    color: #F21B3F;
+    box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
 }
 
 @media only screen and (max-width: 950px){

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="static/css/style.css">    
+    <link rel="stylesheet" href="./static/css/style.css">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Linkando as Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
     <title>Lovelace - Hora de praticar!</title>
 </head>
@@ -24,7 +26,7 @@
             
         </div>
 
-        <input id="submitAnswer" type="text" placeholder="A ideia central do texto é..." required>
+        <input id="submitAnswer" type="text" placeholder="As palavras chave do texto são..." required>
         
         <div class="answerButtons">
             <button class="sendAnswer" onclick="sendAnswers()">Enviar resposta</button>
@@ -46,40 +48,38 @@
                 <h2 id="scoreTitle"><span id="score"></span>/100</h2>
             </div>
 
-            <p class="modalParagraph">Seu nível é:</p>
-            <span id="level"></span>
-            <p class="modalParagraph">Deseja salvar o resultado em um PDF?</p>
+            <p class="usuario">Usuario: <span id="login"></span></p>
+
+            <p class="modalParagraph">Seu nível:  <span id="level"></span> </p>
+
+            <p class="Text">Texto Lido:  <span id="txt"></span> </p>
+
+            <p class="temp">Tempo:  <span id="time"></span> </p>
+
+            
+            <footer id="foot" style="margin-top: 70px;" >
+                <p>Desenvolvido por <span>Daniel de Santana</span>,<span> Marcos Emanuel </span> e <span> Melkysedeke Costa</span>.</p>
+                <span class="divider"></span>
+                <p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
+            </footer>
+
+            <p class="paragraphmodal">Deseja salvar o resultado em um PDF?</p>
+
             <div id="resultButtons">
-                <button id="savePdf">Quero!</button>
+                <button id="save" onclick="">Quero!</button>
                 <button id="dontSavePdf" onclick="">Não quero</button>
             </div>
-
         </div>
     </section>
+
     <script src="./static/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <script>
-        Swal.fire({
-            title: 'Iniciar Atividade?',
-            text: "A partir daqui não terá mais volta!",
-            icon: 'warning',
-            iconColor: '#F21B3F',
-            background: 'white',
-            showCancelButton: true,
-            confirmButtonColor: '#F21B3F',
-            cancelButtonborder: '20px',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Iniciar'
-          }).then((result) => {
-            if (result.dismiss) {
-                window. history. back()
-            }else{
-                history.pushState(null, null, document.URL);
-                window.addEventListener('popstate', function () {
-                    history.pushState(null, null, document.URL);
-                });
-            }
-          })
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+            });
     </script>
 </body>
 </html>

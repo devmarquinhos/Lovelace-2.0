@@ -7,7 +7,10 @@
     font-size: 16px;
     color: #141115;
     
+    
 }
+
+
 
 *::selection {
     background: #F21B3F;
@@ -18,12 +21,16 @@
 body {
     overflow-x: hidden;
     background: linear-gradient(142.15deg, #FFFFFF 49.5%, #F21B3F 159.81%);
+    
 }
 
 /* Header */
 header h1 {
-    color: #F21B3F;
-    font-size: 24px;
+    background:  linear-gradient(269.52deg, #F21B3F -1.77%, #FFD151 95%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 32px;
 }
 
 header {
@@ -150,6 +157,7 @@ header {
     background-color: #F21B3F;
     border: 1px solid #F21B3F;
     transition: all .2s;
+    font-size: 20px;
 }
 
 /* See eBooks button */
@@ -161,6 +169,7 @@ header {
     border-radius: 6px;
     color: #F21B3F;
     transition: all .2s;
+    
 }
 
 #startPractice:hover{
@@ -242,7 +251,7 @@ header {
     padding: 16px;
     color: #FFFFFF;
     background: #F21B3F;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 6px;
     transition: all .2s;
     cursor: pointer;
@@ -299,15 +308,12 @@ footer {
     width: 100vw;
     margin: 96px 0;
     text-align: center;
+    color: #141115;
 }
 
 footer p span {
     color: #141115;
     font-weight: 700;
-}
-
-footer p {
-    color: #141115;
 }
 
 footer .divider {
@@ -365,6 +371,7 @@ footer .divider {
     height: 100%;
     background-color: #1411157a;
     position: fixed;
+    flex-direction: column;
     top: 0;
     left: 0;
     z-index: 2000;
@@ -375,6 +382,11 @@ footer .divider {
 
 #resultContainer.show {
     display: flex;
+}
+
+#foot{
+    display: none;
+        
 }
 
 .modal {
@@ -428,6 +440,18 @@ footer .divider {
     user-select: none;
 }
 
+.usuario{
+    display: none;
+}
+
+.Text{
+    display: none;
+}
+
+.temp{
+    display: none;
+}
+
 #resultButtons {
     display: flex;
     align-items: center;
@@ -436,7 +460,7 @@ footer .divider {
     gap: 16px;
 }
 
-#savePdf {
+#save {
     height: 64px;
     width: 8em;
     padding: 16px;
@@ -460,9 +484,19 @@ footer .divider {
     border-radius: 4px;
 }
 
+
+
+#dontSavePdf:hover{
+    border: 1px solid #F21B3F;
+    color: black;
+    box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
+}
+
 #savePdf:hover {
-    background: #FFFFFF;
+    border: 1px solid #F21B3F;
+    background-color: white;
     color: #F21B3F;
+    box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
 }
 
 /* Media queries */
